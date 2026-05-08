@@ -7,7 +7,7 @@ export const Route = createFileRoute('/')({
   component: Home,
 })
 
-function Logo({ light = false }: { light?: boolean } = {}) {
+function Logo({ light = false }) {
   return (
     <div className="flex items-center gap-3">
       <div className="relative w-12 h-12 flex-shrink-0">
@@ -39,7 +39,7 @@ function Logo({ light = false }: { light?: boolean } = {}) {
         </svg>
       </div>
       <div className="flex flex-col -space-y-1">
-        <span className={`font-black text-2xl tracking-tighter ${light ? 'text-slate-400' : 'text-slate-900'} leading-none`}>LEIJA SIGNS</span>
+        <span className="font-black text-2xl tracking-tighter leading-none" style={{color:light?"#94a3b8":"#0f172a"}}>LEIJA SIGNS</span>
         <span className="text-[10px] font-bold tracking-[0.2em] text-brand-teal">LUV SIGNS LLC</span>
       </div>
     </div>
@@ -119,7 +119,7 @@ function Home() {
             </h1>
             <div className="h-1.5 w-32 bg-brand-teal mb-8"></div>
             <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl font-medium">
-              Fabrication â¢ Installation â¢ ADA Compliance â¢ Rebrands. <br className="hidden md:block"/>
+              Fabrication • Installation • ADA Compliance • Rebrands. <br className="hidden md:block"/>
               Trusted by financial institutions and national brands for precise, compliant, and on-time execution.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -359,14 +359,14 @@ function Home() {
             
             <div className="space-y-8 mb-12">
               <a href="tel:2106631393" className="flex items-center gap-6 group">
-                <div className="w-16 h-16 bg-white border border-slate-200 flex items-center justify-center text-2xl group-hover:bg-brand-teal group-hover:border-brand-teal group-hover:text-white transition-all shadow-sm">ð</div>
+                <div className="w-16 h-16 bg-white border border-slate-200 flex items-center justify-center text-2xl group-hover:bg-brand-teal group-hover:border-brand-teal group-hover:text-white transition-all shadow-sm">📞</div>
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Direct Bid Line</p>
                   <p className="text-2xl font-black text-slate-900 group-hover:text-brand-teal transition-colors tracking-tight">210-663-1393</p>
                 </div>
               </a>
               <div className="flex items-center gap-6">
-                <div className="w-16 h-16 bg-white border border-slate-200 flex items-center justify-center text-2xl text-slate-900 shadow-sm">ð</div>
+                <div className="w-16 h-16 bg-white border border-slate-200 flex items-center justify-center text-2xl text-slate-900 shadow-sm">📍</div>
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Operations Hub</p>
                   <p className="text-2xl font-black text-slate-900 tracking-tight uppercase">San Antonio, TX</p>
@@ -397,7 +397,7 @@ function Home() {
           <div className="bg-white border-t-8 border-brand-teal p-8 md:p-12 shadow-2xl shadow-slate-200/50">
             {submitted ? (
               <div className="text-center py-20">
-                <div className="w-20 h-20 bg-brand-teal/10 text-brand-teal rounded-full flex items-center justify-center text-3xl mx-auto mb-6">â</div>
+                <div className="w-20 h-20 bg-brand-teal/10 text-brand-teal rounded-full flex items-center justify-center text-3xl mx-auto mb-6">✓</div>
                 <h3 className="text-2xl font-black mb-4 uppercase tracking-tighter">Request Received</h3>
                 <p className="text-slate-600 mb-8 font-medium">Our coordination team will review your project details and contact you shortly.</p>
                 <button 
@@ -547,7 +547,7 @@ function Home() {
           </div>
           
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] font-black uppercase tracking-[0.3em] text-slate-700">
-            <p>Â© {new Date().getFullYear()} LEIJA SIGNS / LUV SIGNS LLC. ALL RIGHTS RESERVED.</p>
+            <p>© {new Date().getFullYear()} LEIJA SIGNS / LUV SIGNS LLC. ALL RIGHTS RESERVED.</p>
             <div className="flex gap-8">
               <span className="hover:text-brand-teal cursor-pointer transition-colors">Privacy</span>
               <span className="hover:text-brand-teal cursor-pointer transition-colors">Compliance</span>
