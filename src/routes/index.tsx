@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { type ChangeEvent, type FormEvent, useState } from 'react'
+import { useState } from 'react'
 import { useMutation } from 'convex/react'
 import { api } from '../../convex/_generated/api'
 
@@ -10,8 +10,9 @@ export const Route = createFileRoute('/')({
 function Logo() {
   return (
     <div className="flex items-center gap-3">
-      <div className="relative h-12 w-12 flex-shrink-0">
-        <svg viewBox="0 0 100 100" className="h-full w-full drop-shadow-sm">
+      <div className="relative w-12 h-12 flex-shrink-0">
+        {/* Heart Shape with Gradient */}
+        <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-sm">
           <defs>
             <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#3eb6e5" />
@@ -20,17 +21,17 @@ function Logo() {
               <stop offset="100%" stopColor="#f09a3e" />
             </linearGradient>
           </defs>
-          <path
-            d="M50 88.5L43.2 82.2C19 60.1 3 45.6 3 27.9C3 13.5 14.3 2.2 28.7 2.2C36.8 2.2 44.6 6 50 12C55.4 6 63.2 2.2 71.3 2.2C85.7 2.2 97 13.5 97 27.9C97 45.6 81 60.1 56.8 82.2L50 88.5Z"
+          <path 
+            d="M50 88.5L43.2 82.2C19 60.1 3 45.6 3 27.9C3 13.5 14.3 2.2 28.7 2.2C36.8 2.2 44.6 6 50 12C55.4 6 63.2 2.2 71.3 2.2C85.7 2.2 97 13.5 97 27.9C97 45.6 81 60.1 56.8 82.2L50 88.5Z" 
             fill="url(#heartGradient)"
           />
-          <text
-            x="50"
-            y="55"
-            textAnchor="middle"
-            fill="white"
-            fontSize="32"
-            fontWeight="900"
+          <text 
+            x="50" 
+            y="55" 
+            textAnchor="middle" 
+            fill="white" 
+            fontSize="32" 
+            fontWeight="900" 
             fontFamily="sans-serif"
           >
             LS
@@ -38,12 +39,8 @@ function Logo() {
         </svg>
       </div>
       <div className="flex flex-col -space-y-1">
-        <span className="font-black text-2xl tracking-tighter text-slate-900 leading-none">
-          LEIJA SIGNS
-        </span>
-        <span className="text-[10px] font-bold tracking-[0.2em] text-brand-teal">
-          LUV SIGNS LLC
-        </span>
+        <span className="font-black text-2xl tracking-tighter text-slate-900 leading-none">LEIJA SIGNS</span>
+        <span className="text-[10px] font-bold tracking-[0.2em] text-brand-teal">LUV SIGNS LLC</span>
       </div>
     </div>
   )
@@ -61,7 +58,7 @@ function Home() {
   const [submitted, setSubmitted] = useState(false)
   const submitLead = useMutation(api.leads.submit)
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
       await submitLead(formData)
@@ -80,7 +77,7 @@ function Home() {
     }
   }
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
@@ -122,7 +119,7 @@ function Home() {
             </h1>
             <div className="h-1.5 w-32 bg-brand-teal mb-8"></div>
             <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl font-medium">
-              Fabrication ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¢ Installation ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¢ ADA Compliance ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¢ Rebrands. <br className="hidden md:block"/>
+              Fabrication • Installation • ADA Compliance • Rebrands. <br className="hidden md:block"/>
               Trusted by financial institutions and national brands for precise, compliant, and on-time execution.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -362,14 +359,14 @@ function Home() {
             
             <div className="space-y-8 mb-12">
               <a href="tel:2106631393" className="flex items-center gap-6 group">
-                <div className="w-16 h-16 bg-white border border-slate-200 flex items-center justify-center text-2xl group-hover:bg-brand-teal group-hover:border-brand-teal group-hover:text-white transition-all shadow-sm">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ</div>
+                <div className="w-16 h-16 bg-white border border-slate-200 flex items-center justify-center text-2xl group-hover:bg-brand-teal group-hover:border-brand-teal group-hover:text-white transition-all shadow-sm">📞</div>
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Direct Bid Line</p>
                   <p className="text-2xl font-black text-slate-900 group-hover:text-brand-teal transition-colors tracking-tight">210-663-1393</p>
                 </div>
               </a>
               <div className="flex items-center gap-6">
-                <div className="w-16 h-16 bg-white border border-slate-200 flex items-center justify-center text-2xl text-slate-900 shadow-sm">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ</div>
+                <div className="w-16 h-16 bg-white border border-slate-200 flex items-center justify-center text-2xl text-slate-900 shadow-sm">📍</div>
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Operations Hub</p>
                   <p className="text-2xl font-black text-slate-900 tracking-tight uppercase">San Antonio, TX</p>
@@ -400,7 +397,7 @@ function Home() {
           <div className="bg-white border-t-8 border-brand-teal p-8 md:p-12 shadow-2xl shadow-slate-200/50">
             {submitted ? (
               <div className="text-center py-20">
-                <div className="w-20 h-20 bg-brand-teal/10 text-brand-teal rounded-full flex items-center justify-center text-3xl mx-auto mb-6">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ</div>
+                <div className="w-20 h-20 bg-brand-teal/10 text-brand-teal rounded-full flex items-center justify-center text-3xl mx-auto mb-6">✓</div>
                 <h3 className="text-2xl font-black mb-4 uppercase tracking-tighter">Request Received</h3>
                 <p className="text-slate-600 mb-8 font-medium">Our coordination team will review your project details and contact you shortly.</p>
                 <button 
@@ -550,7 +547,7 @@ function Home() {
           </div>
           
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] font-black uppercase tracking-[0.3em] text-slate-700">
-            <p>ÃÂÃÂÃÂÃÂ© {new Date().getFullYear()} LEIJA SIGNS / LUV SIGNS LLC. ALL RIGHTS RESERVED.</p>
+            <p>© {new Date().getFullYear()} LEIJA SIGNS / LUV SIGNS LLC. ALL RIGHTS RESERVED.</p>
             <div className="flex gap-8">
               <span className="hover:text-brand-teal cursor-pointer transition-colors">Privacy</span>
               <span className="hover:text-brand-teal cursor-pointer transition-colors">Compliance</span>
