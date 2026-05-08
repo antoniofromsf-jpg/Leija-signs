@@ -1,8 +1,7 @@
-import { mutation } from "./_generated/server";
+import { mutation, action } from "./_generated/server";
 import { v } from "convex/values";
-import { internal } from "./_generated/api";
 
-export const submitLead = mutation({
+export const submit = mutation({
   args: {
     name: v.string(),
     company: v.string(),
@@ -13,7 +12,8 @@ export const submitLead = mutation({
   },
   handler: async (ctx, args) => {
     const leadId = await ctx.db.insert("leads", args);
-    await ctx.scheduler.runAfter(0, internal.sendLeadEmail.sendLeadNotification, args);
     return leadId;
   },
 });
+
+export const submitLead = submit;
