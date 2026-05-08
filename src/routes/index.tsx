@@ -7,7 +7,7 @@ export const Route = createFileRoute('/')({
   component: Home,
 })
 
-function Logo() {
+function Logo({ light = false }) {
   return (
     <div className="flex items-center gap-3">
       <div className="relative w-12 h-12 flex-shrink-0">
@@ -39,7 +39,7 @@ function Logo() {
         </svg>
       </div>
       <div className="flex flex-col -space-y-1">
-        <span className="font-black text-2xl tracking-tighter text-slate-900 leading-none">LEIJA SIGNS</span>
+        <span className={`font-black text-2xl tracking-tighter ${light ? 'text-slate-400' : 'text-slate-900'} leading-none`}>LEIJA SIGNS</span>
         <span className="text-[10px] font-bold tracking-[0.2em] text-brand-teal">LUV SIGNS LLC</span>
       </div>
     </div>
@@ -520,7 +520,7 @@ function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 border-b border-white/5 pb-16">
             <div className="col-span-1 md:col-span-2">
-              <Logo />
+              <Logo light />
               <p className="text-slate-500 max-w-sm leading-relaxed mt-8 font-medium">
                 Premier partner for commercial signage fabrication and installation in high-security and institutional environments.
               </p>
