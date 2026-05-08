@@ -1,7 +1,7 @@
-import { internalAction } from "./_generated/server";
+import { action } from "./_generated/server";
 import { v } from "convex/values";
 
-export const sendLeadNotification = internalAction({
+export const sendLeadNotification = action({
   args: {
     name: v.string(),
     company: v.string(),
@@ -17,8 +17,7 @@ export const sendLeadNotification = internalAction({
       from: "Leija Signs <noreply@leijasigns.com>",
       to: "admin@leijasigns.com",
       subject: `New Quote Request from ${args.name} - ${args.company}`,
-      html: `
-        <h2>New Quote Request</h2>
+      html: `<h2>New Quote Request</h2>
         <table style="border-collapse:collapse;width:100%;font-family:sans-serif;">
           <tr><td style="padding:8px;font-weight:bold;background:#f5f5f5;">Name</td><td style="padding:8px;">${args.name}</td></tr>
           <tr><td style="padding:8px;font-weight:bold;background:#f5f5f5;">Company</td><td style="padding:8px;">${args.company}</td></tr>
@@ -26,8 +25,7 @@ export const sendLeadNotification = internalAction({
           <tr><td style="padding:8px;font-weight:bold;background:#f5f5f5;">Email</td><td style="padding:8px;">${args.email}</td></tr>
           <tr><td style="padding:8px;font-weight:bold;background:#f5f5f5;">Project Type</td><td style="padding:8px;">${args.projectType}</td></tr>
           <tr><td style="padding:8px;font-weight:bold;background:#f5f5f5;">Message</td><td style="padding:8px;">${args.message}</td></tr>
-        </table>
-      `,
+        </table>`,
     });
   },
 });
