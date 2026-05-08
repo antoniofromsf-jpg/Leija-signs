@@ -11,32 +11,7 @@ function Logo({ light = false }) {
   return (
     <div className="flex items-center gap-3">
       <div className="relative w-12 h-12 flex-shrink-0">
-        {/* Heart Shape with Gradient */}
-        <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-sm">
-          <defs>
-            <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#3eb6e5" />
-              <stop offset="33%" stopColor="#4cb9b0" />
-              <stop offset="66%" stopColor="#e54a7c" />
-              <stop offset="100%" stopColor="#f09a3e" />
-            </linearGradient>
-          </defs>
-          <path 
-            d="M50 88.5L43.2 82.2C19 60.1 3 45.6 3 27.9C3 13.5 14.3 2.2 28.7 2.2C36.8 2.2 44.6 6 50 12C55.4 6 63.2 2.2 71.3 2.2C85.7 2.2 97 13.5 97 27.9C97 45.6 81 60.1 56.8 82.2L50 88.5Z" 
-            fill="url(#heartGradient)"
-          />
-          <text 
-            x="50" 
-            y="55" 
-            textAnchor="middle" 
-            fill="white" 
-            fontSize="32" 
-            fontWeight="900" 
-            fontFamily="sans-serif"
-          >
-            LS
-          </text>
-        </svg>
+        <img src="/heart.png" alt="LS" className="w-full h-full object-contain" />
       </div>
       <div className="flex flex-col -space-y-1">
         <span className="font-black text-2xl tracking-tighter leading-none" style={{color:light?"#94a3b8":"#0f172a"}}>LEIJA SIGNS</span>
