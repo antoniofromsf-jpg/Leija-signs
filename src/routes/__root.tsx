@@ -26,7 +26,7 @@ export const Route = createRootRouteWithContext<{
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
-      { rel: 'icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', href: '/favicon.png' }, { rel: 'apple-touch-icon', href: '/favicon.png' },
     ],
   }),
   notFoundComponent: () => <div>Route not found</div>,
