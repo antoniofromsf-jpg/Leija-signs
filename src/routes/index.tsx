@@ -11,7 +11,7 @@ function Logo({ light = false }) {
   return (
     <div className="flex items-center gap-3">
       <div className="relative w-12 h-12 flex-shrink-0">
-        <img src="/heart-logo.png" alt="LS" className="w-full h-full object-contain drop-shadow-sm" />
+        <img src="/heart-logo.png" alt="LS" className="w-full h-full object-contain" style={{mixBlendMode:"multiply"}} />
       </div>
       <div className="flex flex-col -space-y-1">
         <span className={`font-black text-2xl tracking-tighter ${light ? 'text-slate-400' : 'text-slate-900'} leading-none`}>LEIJA SIGNS</span>
