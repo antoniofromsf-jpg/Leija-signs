@@ -21,7 +21,7 @@ export const Route = createRootRouteWithContext<{
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'App',
+        title: 'Leija Signs | Commercial Signage & Wayfinding Solutions',
       },
     ],
     links: [
